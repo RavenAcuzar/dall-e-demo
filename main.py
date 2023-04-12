@@ -21,10 +21,10 @@ def generate_image():
             size="256x256",
         )
         image_data = response["data"][0]["url"]
-        return render_template('index.html', image_data=image_data, error=None)
+        return render_template('index.html', image_data=image_data)
     except:
         # Handle any errors that may occur when calling the OpenAPI endpoint
-        return render_template('index.html', image_data=None, error=str(e))
+        return render_template('index.html', image_data=None)
 
 if __name__ == '__main__':
     app.run()
